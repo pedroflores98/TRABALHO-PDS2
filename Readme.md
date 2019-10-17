@@ -12,8 +12,8 @@ Feito em C++
 
 ---
 
--Pedro Herculano Flores
--Thiago Luiz Rodarte
--Ricardo Nascimento de Oliveira
--Renato Rodrigues Pereira
--Richard Wagner Abras Ribeiro Sobrinho
+- Pedro Herculano Flores
+- Thiago Luiz Rodarte
+- Ricardo Nascimento de Oliveira
+- Renato Rodrigues Pereira
+- Richard Wagner Abras Ribeiro Sobrinho
