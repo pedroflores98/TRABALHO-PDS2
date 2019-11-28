@@ -1,0 +1,47 @@
+#ifndef CADASTRO_H
+#define CADASTRO_H
+#include "stdafx.hpp"
+
+using namespace std;
+
+
+//dados em comum para cadastro de doadores e locais de coleta
+
+class cadastro{
+    public:
+        string senha;
+
+    
+        int num_contato;
+        string nome;
+        string endereco;
+        string login;
+
+    
+        //construtor vazio, construtor e destrutor
+        cadastro();
+        cadastro(string login,string senha, int num_contato, string nome, string endereco);
+       /* virtual ~cadastro(){
+            delete this->senha;
+            delete this->num_contato;
+            delete this->nome;
+            delete this->endereco;
+            delete this->login;
+        };*/
+
+        //retorna a variavel solicitada
+        int get_num_contato()const;
+        string get_nome()const;
+        string get_senha()const;
+        string get_endereco()const;
+        string get_login()const;
+
+        //alteração de variavel
+        int set_num_contato(int num_contato);
+        string set_nome(string nome);
+        string set_senha(string senha);
+        string set_endereco(string endereco);
+        string set_login(string login);
+
+};
+#endif
