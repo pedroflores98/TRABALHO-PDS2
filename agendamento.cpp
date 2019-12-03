@@ -4,22 +4,16 @@ agendamento::agendamento(){
 
     this->login = "";
     this->senha = "";
+    this->endereco = "";
+    this->data = "";
 }
 
-agendamento::agendamento(string login, string senha){
+agendamento::agendamento(string login, string senha, string endereco, string data){
 
     this->login = login;
     this->senha = senha;
-}
-
-string agendamento::get_login()const{
-
-    return login;
-}
-
-string agendamento::get_senha()const{
-
-    return senha;
+    this->endereco = endereco;
+    this->data = data;
 }
 
 string agendamento::set_login(string login){
@@ -40,17 +34,17 @@ string agendamento::set_senha(string senha){
     return -1;
 }
 
-agendamento::agendamento::cadastro(){//nao sei se e assim que chama essa funcao
+string agendamento::set_data(string data){
 
-    this->endereco = "";
-    this->data = "";
+    if(!data.empty){
+        this->data = data;
+        return data;
+    }
+    return -1;
 }
 
-agendamento::agendamento::cadastro(string endereco, string data){//nao sei se e assim que chama essa funcao
 
-    this->endereco = endereco;
-    this->data = data;
+string agendamento::get_endereco()const{
+
+    return endereco;
 }
-
-// estou em duvida de como fazer essa parte
-// a ideia aqui é o cara escolher um local e uma data para a doacao. Vou continuar pensando. Se alguem puder ajudar
