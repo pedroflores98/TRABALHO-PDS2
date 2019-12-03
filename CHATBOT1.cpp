@@ -1,5 +1,5 @@
 /*
-Trabalho Pr·tico - PDS II - UFMG
+Trabalho Pr√°tico - PDS II - UFMG
 2019/2
 Alunos:
 
@@ -15,22 +15,23 @@ Alunos:
 
 bool chatbot()
 {
-    char opÁ„o;
+    char op√ß√£o;
     int idade = 0;
+    bool confirmado = false;
     bool elegivel = true;
-    while (elegivel)
+    while (elegivel && !confirmado)
     {
-        cout << "Ol·, sou o Hemoglobinho! Vou lhe perguntar algumas coisas para saber se vocÍ tem algum dos impedimentos mais comuns para doaÁ„o de sangue." << endl ;
-        cout << "… muito importante que vocÍ seja sincero nas respostas, afinal de contas, outro ser-humano ir· receber seu sangue." << endl ;
-        cout << "Eu sÛ tenho 02 semanas de vida e ainda tenho muito a aprender! Pega leve comigo, camarada!"<<endl;
-        cout << "Vamos comeÁar!" <<endl;
+        cout << "Ol√°, sou o Hemoglobinho! Vou lhe perguntar algumas coisas para saber se voc√™ tem algum dos impedimentos mais comuns para doa√ß√£o de sangue." << endl ;
+        cout << "√â muito importante que voc√™ seja sincero nas respostas, afinal de contas, outro ser-humano ir√° receber seu sangue." << endl ;
+        cout << "Eu s√≥ tenho 02 semanas de vida e ainda tenho muito a aprender! Pega leve comigo, camarada!"<<endl;
+        cout << "Vamos come√ßar!" <<endl;
 
         //Pergunta 1
         cout<< "Qual a sua idade?"<endl;
         cin>>idade;
         if (idade <=15 || idade >= 60)
         {
-            cout<<"Infelizmente vocÍ n„o preenche os requisitos para doar sangue."<<endl;
+            cout<<"Infelizmente voc√™ n√£o preenche os requisitos para doar sangue."<<endl;
             elegivel = false;
         }
 
@@ -39,162 +40,163 @@ bool chatbot()
       /*  cout <<"Pergunta"<<endl;
         cout <<"1. Sim"<<endl;
         cout <<"2. Nao"<<endl;
-        cin>>opÁ„o;
+        cin>>op√ß√£o;
         if (opcao=='1')
             elegivel = false;
          */
 
          //peso
-         cout <<"Seu peso È inferior a 50kg?"<<endl;
+         cout <<"Seu peso √© inferior a 50kg?"<<endl;
         cout <<"1. Sim"<<endl;
         cout <<"2. Nao"<<endl;
-        cin>>opÁ„o;
+        cin>>op√ß√£o;
         if (opcao=='1'){
             elegivel = false;
-            cout<<"VocÍ infelizmente n„o È elegÌvel para doaÁ„o de sangue."<endl;
+            cout<<"Voc√™ infelizmente n√£o √© eleg√≠vel para doa√ß√£o de sangue."<endl;
         }
 
-        cout <<"VocÍ tem anemia?"<<endl;
+        cout <<"Voc√™ tem anemia?"<<endl;
         cout <<"1. Sim"<<endl;
         cout <<"2. Nao"<<endl;
-        cin>>opÁ„o;
+        cin>>op√ß√£o;
         if (opcao=='1'){
             elegivel = false;
-            cout<<"VocÍ infelizmente n„o È elegÌvel para doaÁ„o de sangue."<endl;
+            cout<<"Voc√™ infelizmente n√£o √© eleg√≠vel para doa√ß√£o de sangue."<endl;
         }
 
-        cout <<"VocÍ est· com febre?"<<endl;
+        cout <<"Voc√™ est√° com febre?"<<endl;
         cout <<"1. Nao"<<endl;
         cout <<"2. Sim"<<endl;
-        cin>>opÁ„o;
+        cin>>op√ß√£o;
         if (opcao=='2'){
             elegivel = false;
-            cout<<"VocÍ infelizmente n„o È elegÌvel para doaÁ„o de sangue."<endl;
+            cout<<"Voc√™ infelizmente n√£o √© eleg√≠vel para doa√ß√£o de sangue."<endl;
         }
 
-        cout <<"VocÍ È gestante?"<<endl;
+        cout <<"Voc√™ √© gestante?"<<endl;
         cout <<"1. Sim"<<endl;
         cout <<"2. Nao"<<endl;
-        cin>>opÁ„o;
+        cin>>op√ß√£o;
         if (opcao=='1'){
             elegivel = false;
-            cout<<"VocÍ infelizmente n„o È elegÌvel para doaÁ„o de sangue."<endl;
+            cout<<"Voc√™ infelizmente n√£o √© eleg√≠vel para doa√ß√£o de sangue."<endl;
         }
 
-        cout <<"VocÍ est· amamentando?"<<endl;
+        cout <<"Voc√™ est√° amamentando?"<<endl;
         cout <<"1. Sim"<<endl;
         cout <<"2. Nao"<<endl;
-        cin>>opÁ„o;
+        cin>>op√ß√£o;
         if (opcao=='1'){
             elegivel = false;
-            cout<<"VocÍ infelizmente n„o È elegÌvel para doaÁ„o de sangue."<endl;
+            cout<<"Voc√™ infelizmente n√£o √© eleg√≠vel para doa√ß√£o de sangue."<endl;
         }
 
         cout <<"Pergunta"<<endl;
         cout <<"1. Sim"<<endl;
         cout <<"2. Nao"<<endl;
-        cin>>opÁ„o;
+        cin>>op√ß√£o;
         if (opcao=='1'){
             elegivel = false;
-            cout<<"VocÍ infelizmente n„o È elegÌvel para doaÁ„o de sangue."<endl;
+            cout<<"Voc√™ infelizmente n√£o √© eleg√≠vel para doa√ß√£o de sangue."<endl;
         }
 
 
-        cout <<"Voce teve diarrÈia nos ˙ltimos 7 dias?"<<endl;
+        cout <<"Voce teve diarr√©ia nos √∫ltimos 7 dias?"<<endl;
         cout <<"1. Sim"<<endl;
         cout <<"2. Nao"<<endl;
-        cin>>opÁ„o;
+        cin>>op√ß√£o;
         if (opcao=='1'){
             elegivel = false;
-            cout<<"VocÍ infelizmente n„o È elegÌvel para doaÁ„o de sangue."<endl;
+            cout<<"Voc√™ infelizmente n√£o √© eleg√≠vel para doa√ß√£o de sangue."<endl;
         }
 
-        cout <<"Voce teve conjuntivite nos ˙ltimos 7 dias?"<<endl;
+        cout <<"Voce teve conjuntivite nos √∫ltimos 7 dias?"<<endl;
         cout <<"1. Sim"<<endl;
         cout <<"2. Nao"<<endl;
-        cin>>opÁ„o;
+        cin>>op√ß√£o;
         if (opcao=='1'){
             elegivel = false;
-            cout<<"VocÍ infelizmente n„o È elegÌvel para doaÁ„o de sangue."<endl;
+            cout<<"Voc√™ infelizmente n√£o √© eleg√≠vel para doa√ß√£o de sangue."<endl;
         }
 
-        cout <<"Voce fez uso de antibiÛticos nas ˙ltimas duas semanas?"<<endl;
+        cout <<"Voce fez uso de antibi√≥ticos nas √∫ltimas duas semanas?"<<endl;
         cout <<"1. Sim"<<endl;
         cout <<"2. Nao"<<endl;
-        cin>>opÁ„o;
+        cin>>op√ß√£o;
         if (opcao=='1'){
             elegivel = false;
-            cout<<"VocÍ infelizmente n„o È elegÌvel para doaÁ„o de sangue."<endl;
+            cout<<"Voc√™ infelizmente n√£o √© eleg√≠vel para doa√ß√£o de sangue."<endl;
         }
 
-            cout <<"Voce teve dengue nos ˙ltimos 30 dias?"<<endl;
+            cout <<"Voce teve dengue nos √∫ltimos 30 dias?"<<endl;
         cout <<"1. Sim"<<endl;
         cout <<"2. Nao"<<endl;
-        cin>>opÁ„o;
+        cin>>op√ß√£o;
         if (opcao=='1'){
             elegivel = false;
-            cout<<"VocÍ infelizmente n„o È elegÌvel para doaÁ„o de sangue."<endl;
+            cout<<"Voc√™ infelizmente n√£o √© eleg√≠vel para doa√ß√£o de sangue."<endl;
         }
 
-            cout <<"Voce fez cirurgia odontolÛgica com o uso de anestesia geral no ˙ltimo mÍs?"<<endl;
+            cout <<"Voce fez cirurgia odontol√≥gica com o uso de anestesia geral no √∫ltimo m√™s?"<<endl;
         cout <<"1. Sim"<<endl;
         cout <<"2. Nao"<<endl;
-        cin>>opÁ„o;
+        cin>>op√ß√£o;
         if (opcao=='1'){
             elegivel = false;
-            cout<<"VocÍ infelizmente n„o È elegÌvel para doaÁ„o de sangue."<endl;
+            cout<<"Voc√™ infelizmente n√£o √© eleg√≠vel para doa√ß√£o de sangue."<endl;
         }
 
-            cout <<"Voce tomou alguma vacina nos ˙ltimos 30 dias??"<<endl;
+            cout <<"Voce tomou alguma vacina nos √∫ltimos 30 dias??"<<endl;
         cout <<"1. Sim"<<endl;
         cout <<"2. Nao"<<endl;
-        cin>>opÁ„o;
+        cin>>op√ß√£o;
         if (opcao=='1'){
             elegivel = false;
-            cout<<"VocÍ infelizmente n„o È elegÌvel para doaÁ„o de sangue."<endl;
+            cout<<"Voc√™ infelizmente n√£o √© eleg√≠vel para doa√ß√£o de sangue."<endl;
         }
 
         cout <<"Voce doou sangue nas ultimas 12 semanas??"<<endl;
         cout <<"1. Sim"<<endl;
         cout <<"2. Nao"<<endl;
-        cin>>opÁ„o;
+        cin>>op√ß√£o;
         if (opcao=='1'){
             elegivel = false;
-            cout<<"VocÍ infelizmente n„o È elegÌvel para doaÁ„o de sangue."<endl;
+            cout<<"Voc√™ infelizmente n√£o √© eleg√≠vel para doa√ß√£o de sangue."<endl;
         }
 
-        cout <<"Voce possui alguma doenÁa sexualmente transmissÌvel?"<<endl;
+        cout <<"Voce possui alguma doen√ßa sexualmente transmiss√≠vel?"<<endl;
         cout <<"1. Sim"<<endl;
         cout <<"2. Nao"<<endl;
-        cin>>opÁ„o;
+        cin>>op√ß√£o;
         if (opcao=='1'){
-            cout<<"VocÍ infelizmente n„o È elegÌvel para doaÁ„o de sangue."<endl;
+            cout<<"Voc√™ infelizmente n√£o √© eleg√≠vel para doa√ß√£o de sangue."<endl;
             elegivel = false;
         }
 
-        cout <<"Voce possui alguma dependÍncia quÌmica?"<<endl;
+        cout <<"Voce possui alguma depend√™ncia qu√≠mica?"<<endl;
         cout <<"1. Sim"<<endl;
         cout <<"2. Nao"<<endl;
-        cin>>opÁ„o;
+        cin>>op√ß√£o;
         if (opcao=='1'){
-            cout<<"VocÍ infelizmente n„o È elegÌvel para doaÁ„o de sangue."<endl;
+            cout<<"Voc√™ infelizmente n√£o √© eleg√≠vel para doa√ß√£o de sangue."<endl;
             elegivel = false;
          }
 
-        cout <<"Voce j· teve alguma dessas doenÁas: Hepatite, Mal·ria, C‚ncer ou DoenÁa de Chagas?"<<endl;
+        cout <<"Voce j√° teve alguma dessas doen√ßas: Hepatite, Mal√°ria, C√¢ncer ou Doen√ßa de Chagas?"<<endl;
         cout <<"1. Sim"<<endl;
         cout <<"2. Nao"<<endl;
-        cin>>opÁ„o;
+        cin>>op√ß√£o;
         if (opcao=='1'){
-            cout<<"VocÍ infelizmente n„o È elegÌvel para doaÁ„o de sangue."<endl;
+            cout<<"Voc√™ infelizmente n√£o √© eleg√≠vel para doa√ß√£o de sangue."<endl;
             elegivel = false;
         }
 
-        cout <<"Aparentemente, vocÍ È elegÌvel para doaÁ„o de sangue. Consulte o ponto de coleta mais prÛximo para ter certeza. Lembre-se de alimentar e dormir apropriadamente na noite anterior ao exame<<endl;
-
+        cout <<"Aparentemente, voc√™ √© eleg√≠vel para doa√ß√£o de sangue. Consulte o ponto de coleta mais pr√≥ximo para ter certeza. Lembre-se de alimentar e dormir apropriadamente na noite anterior ao exame<<endl;
+        confirmado = true;
+        //elegivel = true (mas o loop se quebra pois && !confirmado no while)
 
     }
-    cout<<"Obrigado pela conversa!"<<endl;
-    return elegÌvel;
+    cout<<"Obrigado pela conversa! Cuide-se!"<<endl;
+    return eleg√≠vel;
 }
 
