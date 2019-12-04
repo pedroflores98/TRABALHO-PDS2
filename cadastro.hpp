@@ -8,16 +8,16 @@ using namespace std;
 //dados em comum para cadastro de doadores e locais de coleta
 
 class cadastro{
-    public:
+    private:
         string senha;
 
-    
+    protected:
         int num_contato;
         string nome;
         string endereco;
         string login;
 
-    
+    public:
         //construtor vazio, construtor e destrutor
         cadastro();
         cadastro(string login,string senha, int num_contato, string nome, string endereco);
@@ -42,6 +42,13 @@ class cadastro{
         string set_senha(string senha);
         string set_endereco(string endereco);
         string set_login(string login);
+        
+        //print das variaveis
+        void  print_endereco();
+        void  print_nome();
+        void  print_senha();
+        void  print_login();
+        void  print_num_contato();
 
 };
 #endif

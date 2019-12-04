@@ -8,10 +8,10 @@ using namespace std;
 //cadastro de doador
 
 class doador : public cadastro{
-    public:
+    private:
     string cpf; //SERÁ UTILIZADO COMO LOGIN
 
-    
+   public: 
     doador():cadastro(){
         this->cpf = "";
     }
@@ -28,6 +28,8 @@ class doador : public cadastro{
     string get_cpf() const;
 
     string set_cpf(string cpf);
+
+    void print_cpf();
 
 };
 

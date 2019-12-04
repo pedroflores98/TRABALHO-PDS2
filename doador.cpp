@@ -11,3 +11,7 @@ string doador::set_cpf(string cpf) {
 string doador::get_cpf()const {
     return cpf;
 }
+
+void doador::print_cpf(){
+        cout<<this->cpf;
+}

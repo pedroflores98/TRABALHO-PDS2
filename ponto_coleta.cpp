@@ -5,9 +5,13 @@ string ponto_coleta::set_cnpj(string cnpj) {
         this->cnpj=cnpj;
         return cnpj;
     }
-    return -1;
+    return "cnpj vazio";
 }
 
-string doador::get_cnpj()const {
+string ponto_coleta::get_cnpj()const {
     return cnpj;
+}
+
+void ponto_coleta::print_cnpj(){
+        cout<<this->cnpj;
 }

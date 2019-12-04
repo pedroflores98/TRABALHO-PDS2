@@ -12,23 +12,25 @@ class ponto_coleta : public cadastro{
     string cnpj; //SERÁ UTILIZADO COMO LOGIN
 
     public:
-    doador():cadastro(){
+    ponto_coleta():cadastro(){
         this->cnpj = "";
     }
 
-    doador(string cnpj, string login, string senha, int num_contato, string nome, string endereco) : cadastro(string login,string senha,
-     int num_contato, string nome, string endereco){
+    ponto_coleta(string cnpj, string login, string senha, int num_contato, string nome, string endereco) : cadastro(login,senha,
+     num_contato, nome, endereco){
         this->cnpj=cnpj;
     }
 
-    ~doador(){
+    ~ponto_coleta(){
         this->cnpj.clear();
     }
 
     string get_cnpj() const;
 
-    string set_cnpj();
+    string set_cnpj(string cnpj);
 
-}
+    void print_cnpj();
+
+};
 
 #endif

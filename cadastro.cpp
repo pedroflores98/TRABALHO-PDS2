@@ -1,4 +1,4 @@
-#include "cadastro.hpp"
+    #include "cadastro.hpp"
 
 cadastro::cadastro(){
     this->num_contato=0;
@@ -75,3 +75,23 @@ string cadastro::set_login(string login){
      }
      return "endereco vazio";
  }
+
+ void cadastro:: print_nome(){
+        cout<<this->nome;
+}
+
+ void cadastro::print_num_contato(){
+        cout<<this->num_contato;
+}
+
+ void cadastro:: print_login(){
+        cout<<this->login;
+}
+
+ void cadastro:: print_senha(){
+        cout<<this->senha;
+}
+
+ void cadastro:: print_endereco(){
+        cout<<this->endereco;
+}

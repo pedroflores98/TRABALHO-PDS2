@@ -1,30 +1,31 @@
-#ifndef LISTA_DOADOR_H
-#define LISTA_DOADOR_H
+#ifndef LISTA_EMPRESA_H
+#define LISTA_EMPRESA_H
 
 #include "list_controller.hpp"
-#include "doador.hpp"
+#include "ponto_coleta.hpp"
 #include "stdafx.hpp"
 
 
 using namespace std;
 
-class lista_doador : public list_controller<doador>{
+class lista_empresa : public list_controller<ponto_coleta>{
     public:
-    lista_doador(list<doador> lista){
+    lista_empresa(list<ponto_coleta> lista){
         this->lista=lista;
     }
     
-    
+    //~lista_doador();
+
     void run();
 
     private:
-    list<doador> lista;
-    
+    list<ponto_coleta> lista;
     void update();
     void remove();
     void show();
     int get_view();
     void create();
+    void show_all();
 
 };
 

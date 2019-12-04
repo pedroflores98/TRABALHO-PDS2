@@ -1,6 +1,6 @@
-#include "lista_doador.hpp"
+#include "lista_empresa.hpp"
 
-void lista_doador::run()
+void lista_empresa::run()
 {
     bool continueRunning = true;
     do
@@ -22,22 +22,24 @@ void lista_doador::run()
         case 4:
             this->show();
             break;
+        case 5:
+            this->show_all();
         }
 
     } while (continueRunning);
 }
 
-void lista_doador::create(){
-    string cpf_, login_, senha_, nome_, endereco_;
+void lista_empresa::create(){
+    string cnpj_, login_, senha_, nome_, endereco_;
     int num_contato_;
     
-    cout <<"Escreva seu cpf: ";
-    cin>>cpf_;
+    cout <<"Escreva seu CNPJ: ";
+    cin>>cnpj_;
     cout <<endl<<"Escreva seu login: ";
     cin>>login_;
-    for(list<doador>::iterator it=lista.begin(); it != lista.end(); it++) {
-        if (it->get_login()==login_ || it->get_cpf()==cpf_){
-            cout<<endl<<"JA EXISTE CADASTRO COM CPF OU LOGIN IGUAL"<<endl;
+    for(list<ponto_coleta>::iterator it=lista.begin(); it != lista.end(); it++) {
+        if (it->get_login()==login_ || it->get_cnpj()==cnpj_){
+            cout<<endl<<"JA EXISTE CADASTRO COM CNPJ OU LOGIN IGUAL"<<endl;
             return;
         }
     }
@@ -52,22 +54,23 @@ void lista_doador::create(){
     getline(cin, endereco_);
     cout<<endl;
     
-    doador doador(cpf_, login_,  senha_,  num_contato_,  nome_,  endereco_);
-    lista.push_back(doador);
+    ponto_coleta ponto_coleta(cnpj_, login_,  senha_,  num_contato_,  nome_,  endereco_);
+    lista.push_back(ponto_coleta);
 
 
 }
 
 
-int lista_doador::get_view(){
+int lista_empresa::get_view(){
    
     int escolha=-1;
-    while (escolha<0 || escolha>5){
-        cout<<endl <<"ESCOLHA UMA OPCAO DE USUARIO: "<<endl;
-        cout<<"1-CRIAR NOVO USUARIO" <<endl;
+    while (escolha<0 || escolha>6){
+        cout<<endl <<"ESCOLHA UMA OPCAO DE LOCAL DE COLETA: "<<endl;
+        cout<<"1-CRIAR NOVO LOCAL DE COLETA" <<endl;
         cout<<"2-ALTERAR DADOS" <<endl;
-        cout<<"3-DELETAR USUARIO" <<endl;
+        cout<<"3-DELETAR LOCAL DE COLETA" <<endl;
         cout<<"4-DETALHAR DADOS" <<endl;
+        cout<<"5-MOSTRAR TODOS OS LOCAIS DE COLETA"<<endl;
         cout<<"0-SAIR"<<endl;
         cout<<endl;
          cin>>escolha;
@@ -76,14 +79,14 @@ int lista_doador::get_view(){
     
 }
 
-void lista_doador::update(){
+void lista_empresa::update(){
     
     string login_temp, senha_temp;
     int contador_2=0;
     cout<<"Digite seu login e sua senha: ";
     cin>>login_temp >>senha_temp;
     cout<<endl;
-    for(list<doador>::iterator it=lista.begin(); it != lista.end(); it++) {
+    for(list<ponto_coleta>::iterator it=lista.begin(); it != lista.end(); it++) {
         if (it->get_login()==login_temp && it->get_senha()==senha_temp){
            bool continua_a_rodar=true;
            contador_2=1;
@@ -93,7 +96,7 @@ void lista_doador::update(){
             cout<<"0-nome"<<endl;
             cout<<"1-senha"<<endl;
             cout<<"2-login"<<endl;
-            cout<<"3-cpf"<<endl;
+            cout<<"3-cnpj"<<endl;
             cout<<"4-endereco"<<endl;
             cout<<"5-num_contato"<<endl;
             cout<<"6-sair"<<endl;
@@ -133,12 +136,12 @@ void lista_doador::update(){
                         break;
                     }
                     case 3:{
-                        cout<<"Digite o novo cpf: ";
-                        string cpf_novo;
-                        cin>>cpf_novo;
+                        cout<<"Digite o novo cnpj: ";
+                        string cnpj_novo;
+                        cin>>cnpj_novo;
                         cout<<endl;
-                        it->set_cpf(cpf_novo);
-                        cout<<endl<<"CPF ALTERADO"<<endl;
+                        it->set_cnpj(cnpj_novo);
+                        cout<<endl<<"CNPJ ALTERADO"<<endl;
                         break;
                     }
                     case 4:{
@@ -177,13 +180,13 @@ void lista_doador::update(){
         
 }
 
-void lista_doador::remove(){
+void lista_empresa::remove(){
     
     string login_temp, senha_temp;
     cout<<endl <<"Digite seu login e sua senha: "<<endl;
     cin>>login_temp >>senha_temp;
     int contador_1=0;
-    for(list<doador>::iterator it=lista.begin(); it != lista.end(); it++) {
+    for(list<ponto_coleta>::iterator it=lista.begin(); it != lista.end(); it++) {
         if (it->get_login()==login_temp && it->get_senha()==senha_temp){
             it=lista.erase(it);
             contador_1++;
@@ -199,17 +202,17 @@ void lista_doador::remove(){
         cout<<endl;
 }
 
-void lista_doador::show(){
+void lista_empresa::show(){
     
     string login_temp, senha_temp;
     cout<<endl <<"Digite seu login e sua senha: "<<endl;
     cin>>login_temp >>senha_temp;
     int contador=0; //NECESSARIO PARA CONFERIR SE O USUARIO EXISTE
-     for(list<doador>::iterator it=lista.begin(); it != lista.end(); it++) {
+     for(list<ponto_coleta>::iterator it=lista.begin(); it != lista.end(); it++) {
         if (it->get_login()==login_temp && it->get_senha()==senha_temp){
             cout<<endl <<"SEGUE OS DADOS SOLICITADOS"<<endl;
-            cout<<"CPF: ";
-            it->print_cpf();
+            cout<<"CNPJ: ";
+            it->print_cnpj();
             cout<<endl;
             cout<<"LOGIN: ";
             it->print_login();
@@ -237,3 +240,27 @@ void lista_doador::show(){
         cout<<endl;
 }
 
+void lista_empresa::show_all(){
+    int cont=1;
+    cout<<endl <<endl<<"SEGUE OS DADOS DE TODOS OS PONTOS DE COLETA"<<endl;
+     for(list<ponto_coleta>::iterator it=lista.begin(); it != lista.end(); it++) {
+        
+            cout<<endl <<endl<<"Ponto "<<cont <<endl;
+            cout<<"CNPJ: ";
+            it->print_cnpj();
+            cout<<endl;
+            cout<<"NUMERO PARA CONTATO: ";
+            it->print_num_contato();
+            cout<<endl;
+            cout<<"NOME: ";
+            it->print_nome();
+            cout<<endl;
+            cout<<"ENDERECO: ";
+            it->print_endereco();
+            cout<<endl;
+            cont++;
+     }
+     if (cont==1){
+         cout<<endl <<"NAO EXISTEM PONTOS DE COLETA CADASTRADOS"<<endl;
+     }
+}
