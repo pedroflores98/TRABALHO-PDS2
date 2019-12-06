@@ -2,14 +2,13 @@
 ----------------
 Trabalho Prático Final da Disciplina de PDS2 - UFMG - 2019/2
 
-Trata-se de uma ferramenta para verificar se um candidato a doador de sangue possui alguma restrição para ser doador e,
-caso não possua, realiza seu cadastro e agenda a doação. 
+Trata-se de uma ferramenta para verificar se um candidato a doador de sangue possui alguma restrição para ser doador, realizar seu cadastro e agenda a sua doação de sangue. Além disso, com ele é possivel para os administradores adionarem pontos de coleta. 
 
 
 ## TODO
 -------
 - [x] Desenvolver User Stories
-- [x] Desenvolver código para lista para doadores
+- [x] Desenvolver código para lista de doadores, ponto de coleta e agendamento
 - [x] Desenvolver código para ponto de coleta de doações
 - [x] Desenvolver código para cadastro de doadores
 - [x] Desenvolver código para agendamento de doações
