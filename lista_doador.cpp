@@ -1,3 +1,4 @@
+
 #include "lista_doador.hpp"
 
 void lista_doador::run()
@@ -235,5 +236,9 @@ void lista_doador::show(){
         }
         
         cout<<endl;
+}
+
+list <doador> lista_doador:: get_lista(){
+        return this-> lista;
 }
 

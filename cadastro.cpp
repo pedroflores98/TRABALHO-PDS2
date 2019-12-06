@@ -17,19 +17,19 @@ cadastro:: cadastro(string login,string senha, int num_contato, string nome, str
 }
 
 int cadastro::get_num_contato()const{
-    return num_contato;
+    return this->num_contato;
 }
 
 string cadastro::get_nome()const{
-     return nome;
+     return this->nome;
  }
 
 string cadastro::get_senha()const{
-    return senha;
+    return this->senha;
 }
 
 string cadastro::get_login()const{
-    return login;
+    return this->login;
 }
 
 string cadastro::get_endereco()const{
@@ -39,7 +39,7 @@ string cadastro::get_endereco()const{
 int cadastro::set_num_contato(int num_contato){
     if(num_contato>0){
          this->num_contato= num_contato;
-         return num_contato;
+         return this->num_contato;
     }
     return -1;
 }

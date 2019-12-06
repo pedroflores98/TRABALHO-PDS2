@@ -1,50 +1,39 @@
 #include "agendamento.hpp"
 
-agendamento::agendamento(){
-
-    this->login = "";
-    this->senha = "";
-    this->endereco = "";
-    this->data = "";
+agendamento::agendamento (doador doador_, ponto_coleta ponto_coleta_, string data){
+    this->doador_=doador_;
+    this->ponto_coleta_=ponto_coleta_;
+    this->data=data;
 }
 
-agendamento::agendamento(string login, string senha, string endereco, string data){
-
-    this->login = login;
-    this->senha = senha;
-    this->endereco = endereco;
-    this->data = data;
+string agendamento::get_doador_login(){
+    return this->doador_.get_login();
 }
 
-string agendamento::set_login(string login){
-
-    if(!login.empty){
-        this->login = login;
-        return login;
-    }
-    return -1;
+string agendamento::get_doador_senha(){
+    return this->doador_.get_senha();
 }
 
-string agendamento::set_senha(string senha){
-
-    if(!senha.empty){
-        this->senha = senha;
-        return senha;
-    }
-    return -1;
+ponto_coleta agendamento::get_ponto_coleta(){
+    return this->ponto_coleta_;
 }
 
-string agendamento::set_data(string data){
-
-    if(!data.empty){
-        this->data = data;
-        return data;
-    }
-    return -1;
+string agendamento:: get_data(){
+    return this->data;
 }
 
+void agendamento::print_doador_nome(){
+    this->doador_.print_nome();
+}
 
-string agendamento::get_endereco()const{
+void agendamento::print_doador_cpf(){
+    this->doador_.print_cpf();
+}
 
-    return endereco;
+void agendamento::print_nome_ponto(){
+    this->ponto_coleta_.print_nome();
+}
+
+void agendamento::print_data(){
+    cout<<this->data;
 }

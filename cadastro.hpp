@@ -21,15 +21,7 @@ class cadastro{
         //construtor vazio, construtor e destrutor
         cadastro();
         cadastro(string login,string senha, int num_contato, string nome, string endereco);
-       /* virtual ~cadastro(){
-            delete this->senha;
-            delete this->num_contato;
-            delete this->nome;
-            delete this->endereco;
-            delete this->login;
-        };*/
-
-        //retorna a variavel solicitada
+      
         int get_num_contato()const;
         string get_nome()const;
         string get_senha()const;
@@ -49,6 +41,8 @@ class cadastro{
         void  print_senha();
         void  print_login();
         void  print_num_contato();
+
+        friend class lista_agendamento;
 
 };
 #endif

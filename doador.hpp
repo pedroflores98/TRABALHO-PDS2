@@ -31,6 +31,8 @@ class doador : public cadastro{
 
     void print_cpf();
 
+    friend class lista_agendamento;
+
 };
 
 

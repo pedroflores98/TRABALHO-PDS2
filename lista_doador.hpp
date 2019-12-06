@@ -14,8 +14,10 @@ class lista_doador : public list_controller<doador>{
         this->lista=lista;
     }
     
-    
+   
+
     void run();
+    list<doador> get_lista();
 
     private:
     list<doador> lista;
@@ -25,6 +27,7 @@ class lista_doador : public list_controller<doador>{
     void show();
     int get_view();
     void create();
+    
 
 };
 

@@ -3,6 +3,8 @@
 #include "lista_doador.hpp"
 #include "lista_empresa.hpp"
 #include "ponto_coleta.hpp"
+#include "agendamento.hpp"
+#include "lista_agendamento.hpp"
 #include <list>
 
 using namespace std;
@@ -199,53 +201,77 @@ bool chatbot()
 
 
 int main(){
-    cout<<"PARA ACESSO DE ADMINISTRADOR DIGITE 1 \n PARA ACESSO DE USUARIO DIGITE 2"<<endl;
-    int num_escolha;
-    cin>>num_escolha;
-    
+    cout<<"favor nos campos onde é solicitado o numero de telefone não digitar letras e simbolos, apenas os numeros"<<endl;
+    bool continuerunning=true;
     list<ponto_coleta> lista_2;
-     lista_empresa rodando_2(lista_2);
+    lista_empresa rodando_2(lista_2);
 
-     list<doador> lista_1;
+    list<doador> lista_1;
     lista_doador rodando(lista_1);
 
-    
-    
-    if(num_escolha==1){
-            rodando_2.run();
-     }
+    list<agendamento> lista_3;
+    lista_agendamento rodando_3(lista_3);
 
-   
-    if(num_escolha==2){
-        bool continuerunning=true;
+    list<doador> doador_sub;
+    list<ponto_coleta> ponto_coleta_sub; 
+    
 
-        do{
-        int escolha_5=0;
+
+    do{
+        cout<<"PARA ACESSO DE ADMINISTRADOR DIGITE 1 \n PARA ACESSO DE USUARIO DIGITE 2 \n PARA SAIR DO PROGRAMA APERTE 3"<<endl;
+        int num_escolha;
+        cin>>num_escolha;
         
-        cout<<endl<<"PARA OPCAO DE DOADOR APERTE 1 \n PARA A OPCAO DE ELEGIBILIDADE PARA DOACAO APERTE 2 \n  PARA SAIR APERTE 3 "<<endl;
-        cin>>escolha_5;
-       switch (escolha_5){
-        case 1:{
+        
+        if(num_escolha==1){
+                rodando_2.run();
+                ponto_coleta_sub=rodando_2.get_lista();
+        }
+
+    
+        if(num_escolha==2){
+            continuerunning=true;
+
+            do{
+            int escolha_5=0;
             
-            rodando.run();
-            break;
+            cout<<endl<<"PARA OPCAO DE DOADOR APERTE 1 \n PARA A OPCAO DE ELEGIBILIDADE PARA DOACAO APERTE 2 \n PARA AGENDAMENTO APERTE 3 \n PARA SAIR APERTE 4 "<<endl;
+            cin>>escolha_5;
+        switch (escolha_5){
+            case 1:{
+               
+                rodando.run();
+                doador_sub=rodando.get_lista();
+                    
+                break;
+            }
+
+            case 2:{
+            
+                chatbot();
+                break;
+
+            }
+            
+            case 3:{
+             
+                rodando_3.run(doador_sub, ponto_coleta_sub);
+                break;
+            }
+            
+            case 4:{
+                continuerunning = false;
+                break;
+            }
+        }
+            }while(continuerunning);
+            continuerunning=true;
         }
 
-        case 2:{
-           
-            chatbot();
-            break;
+        if(num_escolha==3){
+            continuerunning=false;
+        }    
 
-        }
-        
-        case 3:{
-            continuerunning = false;
-            break;
-        }
-    }
-        }while(continuerunning);
-
-    return 0;
-
-}
+  }while( continuerunning);
+  return 0;
 }

@@ -31,6 +31,8 @@ class ponto_coleta : public cadastro{
 
     void print_cnpj();
 
+    friend class lista_agendamento;
+
 };
 
 #endif

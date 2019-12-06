@@ -264,3 +264,7 @@ void lista_empresa::show_all(){
          cout<<endl <<"NAO EXISTEM PONTOS DE COLETA CADASTRADOS"<<endl;
      }
 }
+
+list<ponto_coleta> lista_empresa:: get_lista(){
+    return this->lista;
+}

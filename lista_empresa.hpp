@@ -13,10 +13,13 @@ class lista_empresa : public list_controller<ponto_coleta>{
     lista_empresa(list<ponto_coleta> lista){
         this->lista=lista;
     }
+
+    
     
     //~lista_doador();
 
     void run();
+    list<ponto_coleta> get_lista();
 
     private:
     list<ponto_coleta> lista;
@@ -26,6 +29,7 @@ class lista_empresa : public list_controller<ponto_coleta>{
     int get_view();
     void create();
     void show_all();
+    
 
 };
 

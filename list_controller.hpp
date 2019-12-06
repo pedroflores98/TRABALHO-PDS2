@@ -19,6 +19,7 @@ class list_controller {
     virtual void update()=0;
     virtual void remove()=0;
     virtual void show()=0;
+    virtual list<T> get_lista()=0;
 };
 
 #endif
